@@ -1,9 +1,9 @@
 public class IfElseStatementTheme {
 
     public static void main(String[] args) {
-        System.out.println("1. Перевод псевдокода на язык Java (это название задачи)\n");
+        System.out.println("1. Перевод псевдокода на язык Java\n");
         int age = 25;
-        boolean isMan = false;
+        boolean isMale = false;
         int height = 190;       
 
         if (age > 20) {
@@ -12,7 +12,7 @@ public class IfElseStatementTheme {
             System.out.println("Ты не можешь водить машину");
         }
 
-        if (!isMan) {
+        if (!isMale) {
             System.out.println("Ты не будешь служить в армии");
         }
 
@@ -22,11 +22,11 @@ public class IfElseStatementTheme {
             System.out.println("Тебя возьмут в космонавты");
         }
 
-        char firstLetterOfTheName = "Ivan".charAt(0); 
+        char firstLetterOfName = "Ivan".charAt(0); 
 
-        if (firstLetterOfTheName == 'M') {
+        if (firstLetterOfName == 'M') {
             System.out.println("Тебя зовут на букву M");
-        } else if (firstLetterOfTheName == 'I') {
+        } else if (firstLetterOfName == 'I') {
             System.out.println("Тебя зовут на букву I");
         } else {
             System.out.println("Твое имя начинается не на I и не на M");
@@ -54,8 +54,7 @@ public class IfElseStatementTheme {
             }
             if (number > 0) {
                 System.out.println("положительное");                
-            }
-            else {
+            } else {
                 System.out.println("отрицательное");
             }
         }
@@ -65,13 +64,13 @@ public class IfElseStatementTheme {
         secondNumber = 385;       
         System.out.printf("Исходные числа : %d, %d\n", firstNumber, secondNumber);
 
-        if (firstNumber / 100 - secondNumber / 100 == 0)
+        if (firstNumber / 100 == secondNumber / 100)
             System.out.printf("Одинаковая цифра %d в третьем разряде\n", firstNumber / 100);
 
-        if ((firstNumber / 10) % 10 - (secondNumber / 10) % 10 == 0)
+        if ((firstNumber / 10) % 10 == (secondNumber / 10) % 10)
             System.out.printf("Одинаковая цифра %d в втором разряде\n", (firstNumber / 10) % 10);
 
-        if (firstNumber % 10 - secondNumber % 10 == 0)
+        if (firstNumber % 10 == secondNumber % 10)
             System.out.printf("Одинаковая цифра %d в первом разряде\n", firstNumber % 10);
 
         System.out.println("\n5. Определение буквы, числа или символа по их коду\n");
@@ -90,8 +89,7 @@ public class IfElseStatementTheme {
 
         System.out.println("\n6. Определение суммы вклада и начисленных банком %\n");
         int deposit = 300_000;
-        int persent = 0;
-        int allSum = 0;
+        int persent = 0;        
 
         if (deposit < 100_000) {
             persent = 5;
@@ -101,14 +99,15 @@ public class IfElseStatementTheme {
             persent = 10;
         }
         persent = deposit * persent / 100;
-        allSum = deposit + persent;
+        int totalSum = totalSum = deposit + persent;
         System.out.printf("Сумма вклада %d начисленные %% %d итоговая сумма с %% %d\n", deposit, 
-                persent, allSum);
+                persent, totalSum);
 
         System.out.println("\n7. Определение оценки по предметам\n");
         int historyRating = 59;
         int programmingRating = 91;
-        int meanPersent = (historyRating + programmingRating) / 2;        
+        int avgPersent = (historyRating + programmingRating) / 2;        
+        System.out.println("Средний % по предметам : " + avgPersent);        
 
         if (historyRating <= 60) {
             historyRating = 2;
@@ -133,30 +132,25 @@ public class IfElseStatementTheme {
         System.out.printf("%d История\n", historyRating);
         System.out.printf("%d Программирование\n", programmingRating);
         System.out.println("Средний бал оценок по предметам : " + 
-                (historyRating + programmingRating) / 2);
-        System.out.println("Средний % по предметам : " + meanPersent);
+                (historyRating + programmingRating) / 2);        
 
         System.out.println("\n\n8. Расчет прибыли\n");
         int monthRentPay = 5000;
         int monthProfit = 13000;
         int monthCostPrice = 9000;
-        int yearProfit = 12 * (monthProfit - monthRentPay - monthCostPrice);
+        int yearProfit = (monthProfit - monthRentPay - monthCostPrice) * 12;
         System.out.printf("Прибыль за год %+d", yearProfit);
 
         System.out.println("\n\n9. Подсчет количества банкнот\n");
-        number = 567;
-        int countOne$ = 0;
-        int countTen$ = 5;
-        int countOneHundred$ = 0;
-        int countAll = 0;
-        number -= countTen$ * 10;
-        countOneHundred$ = number / 100;
-        countOne$ = number % 100;
-        countAll = countOne$ + countTen$ + countOneHundred$;
-        number = countOne$ * 1 + countTen$ * 10 + countOneHundred$ * 100;
-        System.out.println("Банкноты номиналом 1$ " + countOne$);
-        System.out.println("Банкноты номиналом 10$ " + countTen$);
-        System.out.println("Банкноты номиналом 100$ " + countOneHundred$);
+        int countTen = 5;
+        number = 567 - countTen * 10;
+        int countOne = number % 100;        
+        int countOneHundred = number / 100;
+        int countAll = countOne + countTen + countOneHundred;
+        number = countOne * 1 + countTen * 10 + countOneHundred * 100;
+        System.out.println("Банкноты номиналом 1$ " + countOne);
+        System.out.println("Банкноты номиналом 10$ " + countTen);
+        System.out.println("Банкноты номиналом 100$ " + countOneHundred);
         System.out.println("Исходная сумма " + number);     
     }
 }
