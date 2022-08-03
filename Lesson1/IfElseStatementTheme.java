@@ -77,11 +77,11 @@ public class IfElseStatementTheme {
         char character = '\u0057';       
         System.out.print("Символ " + character + " это ");
 
-        if (character >= 65 && character <= 90)
+        if (character >= 65 && character <= 90) {
             System.out.println("большая буква");
-        else if (character >= 97 && character <= 122)
+        } else if (character >= 97 && character <= 122) {
             System.out.println("маленькая буква");
-        else if (character >= 48 && character <= 57) {
+        } else if (character >= 48 && character <= 57) {
             System.out.println("число");
         } else {
             System.out.println("не буква и не число");
