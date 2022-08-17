@@ -3,30 +3,30 @@ public class CyclesTheme {
     public static void main(String[] args) {
         System.out.println("\n1. Подсчет суммы четных и нечетных чисел\n");
         int counter = -10;
-        int evenSum = 0;
-        int oddSum = 0;
+        int sumEven = 0;
+        int sumOdd = 0;
 
         do {
             if (counter % 2 == 0) {
-                evenSum += counter;
+                sumEven += counter;
             } else {
-                oddSum += counter;
+                sumOdd += counter;
             }
             counter++;
         } while (counter <= 21);
 
         System.out.printf("В промежутке [-10, 21] сумма четных чисел = %d, а нечетных = %d\n", 
-                evenSum, oddSum);
+                sumEven, sumOdd);
 
         System.out.println("\n2. Вывод чисел в интервале (min и max) в порядке убывания\n");
-        int firstNumber = 10;
-        int secondNumber = 5;
-        int thirdNumber = -1;
-        int min = (firstNumber < secondNumber && firstNumber < thirdNumber) ? firstNumber :
-                (secondNumber < thirdNumber) ? secondNumber : thirdNumber;
-        int max = (firstNumber > secondNumber && firstNumber > thirdNumber) ? firstNumber :
-                (secondNumber > thirdNumber) ? secondNumber : thirdNumber;
-
+        int number1 = 10;
+        int number2 = 5;
+        int number3 = -1;       
+        int min = (number1 < number2) ? number1 : number2;
+        min = (min < number3) ? min : number3;
+        int max = (number1 > number2) ? number1 : number2;
+        max = (max > number3) ? max : number3;
+       
         for (int i = max - 1; i > min; i--) {
             System.out.print(i + " ");
         }
@@ -48,6 +48,7 @@ public class CyclesTheme {
 
         System.out.println("\n4. Вывод чисел на консоль в несколько строк\n");    
         int count = 0;
+
         for (int i = 1; i < 24; i+=2) {                            
             System.out.printf("%5d", i);
             count++;
@@ -64,7 +65,8 @@ public class CyclesTheme {
         System.out.println("\n\n5. Проверка количества единиц на четность\n");
         number = 3141591;
         count = 0;
-        System.out.printf("Число %d содержит", number);      
+        System.out.printf("Число %d содержит", number);
+
         while (number > 0) {
             if (number % 10 == 1) {
                 count++;
@@ -81,7 +83,8 @@ public class CyclesTheme {
             System.out.println("**********");            
         }
 
-        int countRow = 5;        
+        int countRow = 5;
+
         while (countRow > 0) {
             int countCol = 0;  
             while (countCol < countRow) {
@@ -94,6 +97,7 @@ public class CyclesTheme {
 
         countRow = 5;
         int countCol = 0;
+        
         do {
             if (countRow < 3) {
                 countCol = countRow;
