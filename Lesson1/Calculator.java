@@ -15,9 +15,9 @@ public class Calculator {
         } else if (sign == '/') {
             result = number1 / number2;
         } else if (sign == '^') {            
-            result = number1;
-            for (int i = 1; i < number2 ; i++) {
-                result *= number1 ;
+            result = 1;
+            for (int i = 0; i < number2 ; i++) {
+                result *= number1;
             }
         } else if (sign == '%') {
            result = number1 % number2;
