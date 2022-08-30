@@ -5,9 +5,9 @@ public class CalculatorTest {
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
         Scanner scanner = new Scanner(System.in);
-        String line = "";
+        String answer = "";
 
-        while (!line.equals("no")) {
+        while (!answer.equals("no")) {
             System.out.print("Введите первое число : "); 
             while (!scanner.hasNextInt()) {
                 System.out.println("Вы ввели не число!");
@@ -35,12 +35,12 @@ public class CalculatorTest {
             calculator.calculate(number1, number2, sign);
 
             System.out.println("Хотите продолжить вычисления? [yes/no]:");
-            line = scanner.next();        
+            answer = scanner.next();        
            
-            while (!line.equals("yes") && !line.equals("no")) {
+            while (!answer.equals("yes") && !answer.equals("no")) {
                 System.out.println("Вы ввели не yes и не no");
                 System.out.println("Хотите продолжить вычисления? [yes/no]:");
-                line = scanner.next();                                 
+                answer = scanner.next();                                 
             }               
         }        
     }

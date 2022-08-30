@@ -1,6 +1,6 @@
 public class Calculator {
 
-    public void calculate (int number1, int number2, char sign) {        
+    public void calculate(int number1, int number2, char sign) {        
         int result = 0;
 
         switch (sign) {
@@ -21,10 +21,10 @@ public class Calculator {
                 break;
             case '^' :
                 result = 1;
-                for (int i = 0; i < number2 ; i++) {
+                for (int i = 0; i < number2; i++) {
                     result *= number1;
-                 }
-                 break;
+                }
+                break;
         }     
 
         System.out.println(number1 + " " + sign + " " + number2 + " = " + result);
