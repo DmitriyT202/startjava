@@ -11,8 +11,6 @@ public class JaegerTest {
         jaeger1.setArmor(6);
         jaeger1.setSpeed(7);
 
-        Jaeger jaeger2 = new Jaeger("Crimson Typhoon", "Mark-4", "China", 1.722, 76.2, 9, 6, 8);
-
         System.out.println("Jaeger1 modelName is " + jaeger1.getModelName());
         System.out.println("Jaeger1 mark is " + jaeger1.getMark());
         System.out.println("Jaeger1 origin is " + jaeger1.getOrigin());
@@ -27,6 +25,8 @@ public class JaegerTest {
         jaeger1.scanKaiju();
         jaeger1.usePlasmaCaster();
         System.out.println();
+
+        Jaeger jaeger2 = new Jaeger("Crimson Typhoon", "Mark-4", "China", 1.722, 76.2, 9, 6, 8);
 
         System.out.println("Jaeger2 modelName is " + jaeger2.getModelName());
         System.out.println("Jaeger2 mark is " + jaeger2.getMark());
@@ -41,29 +41,5 @@ public class JaegerTest {
         jaeger2.move();
         jaeger2.scanKaiju();
         jaeger2.usePlasmaCaster();
-
-        jaeger1.setModelName("Horizon Brave");
-        jaeger1.setMark("Mark-1");
-        jaeger1.setOrigin("China");
-        jaeger1.setWeight(7.890);
-        jaeger1.setHeight(72.54);
-        jaeger1.setStrength(4);
-        jaeger1.setArmor(6);
-        jaeger1.setSpeed(8);
-        System.out.println();
-
-        System.out.println("Jaeger1 modelName is " + jaeger1.getModelName());
-        System.out.println("Jaeger1 mark is " + jaeger1.getMark());
-        System.out.println("Jaeger1 origin is " + jaeger1.getOrigin());
-        System.out.println("Jaeger1 weight = " + jaeger1.getWeight());
-        System.out.println("Jaeger1 height = " + jaeger1.getHeight());
-        System.out.println("Jaeger1 strength = " + jaeger1.getStrength());
-        System.out.println("Jaeger1 armor = " + jaeger1.getArmor());
-        System.out.println("Jaeger1 speed = " + jaeger1.getSpeed());
-        System.out.println(jaeger1);
-        jaeger1.drift();
-        jaeger1.move();
-        jaeger1.scanKaiju();
-        jaeger1.usePlasmaCaster();
     }    
 }
