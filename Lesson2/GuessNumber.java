@@ -1,4 +1,4 @@
-import static java.lang.Math.random;
+import java.lang.Math;
 import java.util.Scanner;
 
 public class GuessNumber {
@@ -11,8 +11,8 @@ public class GuessNumber {
         this.player2 = player2;
     }
 
-    public void startGame() {
-        int number = (int) (random()*100) + 1;
+    public void start() {
+        int number = (int) (Math.random() * 100) + 1;
         System.out.println("Загадано число в интервале в полуинтервале (0, 100]");
         System.out.println(number);
 
@@ -38,15 +38,15 @@ public class GuessNumber {
                 System.out.printf("Первый игрок - %s угадал число %d!\n", 
                         player1.getName(), number);
                 break;
+            }
+
+            System.out.println("Первый игрок не угадал загаданное число");
+            if (player1.getNumber() > number) {
+                System.out.printf("Число %d больше того, что загадал компьютер\n", 
+                        player1.getNumber());
             } else {
-                System.out.println("Первый игрок не угадал загаданное число");
-                if (player1.getNumber() > number) {
-                    System.out.printf("Число %d больше того, что загадал компьютер\n", 
+                System.out.printf("Число %d меньше того, что загадал компьютер\n",
                             player1.getNumber());
-                } else {
-                    System.out.printf("Число %d меньше того, что загадал компьютер\n",
-                                player1.getNumber());
-                }
             }
             
             System.out.print("Второй игрок называет число: ");
@@ -68,15 +68,15 @@ public class GuessNumber {
                 System.out.printf("Второй игрок - %s угадал число %d\n", 
                         player2.getName(), number);
                 break;
-            } else {
-                System.out.println("Второй игрок не угадал загаданное число");
-                if (player2.getNumber() > number) {
-                        System.out.printf("Число %d больше того, что загадал компьютер\n", 
-                                player2.getNumber());
-                } else {
-                    System.out.printf("Число %d меньше того, что загадал компьютер\n",
+            }
+
+            System.out.println("Второй игрок не угадал загаданное число");
+            if (player2.getNumber() > number) {
+                    System.out.printf("Число %d больше того, что загадал компьютер\n", 
                             player2.getNumber());
-                }
+            } else {
+                System.out.printf("Число %d меньше того, что загадал компьютер\n",
+                        player2.getNumber());
             }
         }
     }

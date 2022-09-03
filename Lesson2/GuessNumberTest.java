@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class GuessNumberTest {
     
     public static void main(String[] args) {
-        String answer = "";
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Введите имя первого игрока : ");       
@@ -13,9 +12,10 @@ public class GuessNumberTest {
         Player player2 = new Player(scanner.nextLine());
 
         GuessNumber guess = new GuessNumber(player1, player2);
+        String answer = "";
 
         while (!answer.equals("no")) {
-            guess.startGame();
+            guess.start();
 
             System.out.println("Хотите продолжить игру? [yes/no]:");
             answer = scanner.next();
